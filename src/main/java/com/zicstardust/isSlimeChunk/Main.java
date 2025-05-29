@@ -3,6 +3,8 @@ package com.zicstardust.isSlimeChunk;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.Objects;
+
 public final class Main extends JavaPlugin {
 
     private static FileConfiguration config;
@@ -14,7 +16,7 @@ public final class Main extends JavaPlugin {
         saveDefaultConfig();
         config = getConfig();
 
-        getCommand("slimechunk").setExecutor(new SlimeChunkCommand());
+        Objects.requireNonNull(getCommand("slimechunk")).setExecutor(new SlimeChunkCommand());
     }
 
 
