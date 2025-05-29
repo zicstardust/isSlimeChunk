@@ -1,4 +1,8 @@
 name: isSlimeChunk
-version: '1.0-SNAPSHOT'
+version: '1.0'
 main: com.zicstardust.isSlimeChunk.Main
 api-version: '1.21'
+
+commands:
+  isSlimeChunk:
+    description: "Check if chunk spawn Slime"
