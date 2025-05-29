@@ -1,0 +1,4 @@
+name: isSlimeChunk
+version: '1.0-SNAPSHOT'
+main: com.zicstardust.isSlimeChunk.Main
+api-version: '1.21'
