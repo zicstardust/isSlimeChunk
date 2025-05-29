@@ -25,12 +25,12 @@ public final class Main extends JavaPlugin {
                 } else {
                     player.sendMessage(textNotSlimeChunk);
                 }
+
+            } else {
+                sender.sendMessage(textNotPlayer);
             }
 
-        } else {
-                sender.sendMessage(textNotPlayer);
         }
         return true;
     }
 }
-
