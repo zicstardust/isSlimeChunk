@@ -1,19 +1,20 @@
 name: isSlimeChunk
-version: '1.0.1'
+version: '1.0.2'
 main: com.zicstardust.isSlimeChunk.Main
 api-version: '1.21.5'
 author: zic_stardust
 description: "Check if chunk spawn Slime"
 
-#permissions:
-#  permission.default:
-#    description: "Not OP permission"
-#    default: notop
+default-permission: true
 
+permissions:
+  isSlimeChunk.slimechunk:
+    description: "Permission command"
 
 commands:
-  isSlimeChunk:
+  slimechunk:
     description: "Check if chunk spawn Slime"
-    usage: "/isSlimeChunk"
-#    permission: permission.default
+    usage: "/slimechunk"
+    aliases: [isslimechunk, slimechunk]
+    permission: isSlimeChunk.slimechunk
 #    permission-message: "You do not have permission to use this command"
