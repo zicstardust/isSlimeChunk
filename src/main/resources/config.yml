@@ -1,0 +1,5 @@
+Translate:
+  IsSlimeChunk: "Is Slime Chunk"
+  NotSlimeChunk: "Not Slime Chunk"
+  NotPlayer: "You must be a player to use this command"
+  NotPermission: "You do not have permission to use this command"

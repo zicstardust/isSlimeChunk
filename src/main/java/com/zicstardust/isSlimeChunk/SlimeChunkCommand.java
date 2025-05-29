@@ -13,10 +13,10 @@ public class SlimeChunkCommand implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, org.bukkit.command.@NotNull Command command, @NotNull String label, @NotNull String @NotNull [] args) {
 
-        final TextComponent textIsSlimeChunk = Component.text("Is Slime Chunk", NamedTextColor.GREEN);
-        final TextComponent textNotSlimeChunk = Component.text("Not Slime Chunk", NamedTextColor.RED);
-        final TextComponent textNotPlayer = Component.text("You must be a player to use this command", NamedTextColor.RED);
-        final TextComponent textNotPermission = Component.text("You do not have permission to use this command", NamedTextColor.RED);
+        final TextComponent textIsSlimeChunk = Component.text(Main.getPluginConfig().getString("Translate.IsSlimeChunk"), NamedTextColor.GREEN);
+        final TextComponent textNotSlimeChunk = Component.text(Main.getPluginConfig().getString("Translate.NotSlimeChunk"), NamedTextColor.RED);
+        final TextComponent textNotPlayer = Component.text(Main.getPluginConfig().getString("Translate.NotPlayer"), NamedTextColor.RED);
+        final TextComponent textNotPermission = Component.text(Main.getPluginConfig().getString("Translate.NotPermission"), NamedTextColor.RED);
 
         if (sender instanceof Player player){
 
