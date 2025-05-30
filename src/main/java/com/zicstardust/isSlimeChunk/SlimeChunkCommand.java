@@ -17,7 +17,7 @@ public class SlimeChunkCommand implements CommandExecutor {
 
     public enum Position  {
         X,
-        Z;
+        Z
     }
 
     private double positionValidator(@NotNull Position position,  @NotNull String argument,  @NotNull Player player) {
