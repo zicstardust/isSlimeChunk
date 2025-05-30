@@ -3,3 +3,6 @@ Translate:
   NotSlimeChunk: "Not Slime Chunk"
   NotPlayer: "You must be a player to use this command"
   NotPermission: "You do not have permission to use this command"
+  WrongArguments: "Wrong Arguments"
+  CommandExemple: "Exemple: /slimechunk <posX> <posZ>"
+  ExecuteOnOverworld: "Execute command on Overworld"
