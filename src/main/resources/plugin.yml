@@ -1,7 +1,7 @@
 name: isSlimeChunk
-version: '1.0.5'
+version: $pluginVersion
 main: com.zicstardust.isSlimeChunk.Main
-api-version: '1.21.5'
+api-version: $minecraftVersion
 website: https://github.com/zicstardust/isSlimeChunk
 author: zic_stardust
 description: "Check if chunk spawn Slime"
