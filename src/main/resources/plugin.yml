@@ -2,6 +2,7 @@ name: isSlimeChunk
 version: '1.0.5'
 main: com.zicstardust.isSlimeChunk.Main
 api-version: '1.21.5'
+website: https://github.com/zicstardust/isSlimeChunk
 author: zic_stardust
 description: "Check if chunk spawn Slime"
 
@@ -15,6 +16,6 @@ commands:
   slimechunk:
     description: "Check if chunk spawn Slime"
     usage: "/slimechunk"
-    aliases: [isslimechunk, slimechunk]
+    #aliases: [isslimechunk, slimechunk]
     permission: isSlimeChunk.slimechunk
-#    permission-message: "You do not have permission to use this command"
+    #permission-message: "You do not have permission to use this command"
