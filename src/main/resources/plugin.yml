@@ -3,7 +3,7 @@ version: $pluginVersion
 main: com.zicstardust.isSlimeChunk.Main
 api-version: $minecraftVersion
 website: https://github.com/zicstardust/isSlimeChunk
-author: zic_stardust
+author: zicstardust
 description: "Check if chunk spawn Slime"
 
 default-permission: true
