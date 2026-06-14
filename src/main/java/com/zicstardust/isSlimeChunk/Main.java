@@ -17,6 +17,8 @@ public final class Main extends JavaPlugin {
         config = getConfig();
 
         Objects.requireNonNull(getCommand("slimechunk")).setExecutor(new SlimeChunkCommand());
+
+        getServer().getPluginManager().registerEvents(new ChunkChangeListener(this), this);
     }
 
 
