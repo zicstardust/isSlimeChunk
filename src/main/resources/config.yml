@@ -7,3 +7,5 @@ Translate:
   CommandExemple: "Exemple: /slimechunk <radar> <on/off>"
   ExecuteOnOverworld: "Execute command on Overworld"
   EnteredSlimeChunk: "You've entered a slime chunk"
+  RadarEnabled: "Radar Enabled!"
+  RadarDisabled: "Radar Disabled!"

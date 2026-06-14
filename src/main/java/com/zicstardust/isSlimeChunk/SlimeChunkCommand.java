@@ -3,7 +3,6 @@ package com.zicstardust.isSlimeChunk;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
 import net.kyori.adventure.text.format.NamedTextColor;
-import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -15,10 +14,13 @@ import org.jspecify.annotations.NonNull;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.regex.Pattern;
 
 public class SlimeChunkCommand implements CommandExecutor, TabCompleter {
+    private final Main plugin;
 
+    public SlimeChunkCommand(Main plugin) {
+        this.plugin = plugin;
+    }
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String @NotNull [] args) {
 
@@ -29,6 +31,8 @@ public class SlimeChunkCommand implements CommandExecutor, TabCompleter {
         final TextComponent textWrongArguments = Component.text(Objects.requireNonNull(Main.getPluginConfig().getString("Translate.WrongArguments")), NamedTextColor.RED)
                 .appendNewline().append(Component.text(Objects.requireNonNull(Main.getPluginConfig().getString("Translate.CommandExemple")), NamedTextColor.YELLOW));
         final TextComponent textExecuteOnOverworld = Component.text(Objects.requireNonNull(Main.getPluginConfig().getString("Translate.ExecuteOnOverworld")), NamedTextColor.RED);
+        final TextComponent textRadarEnabled = Component.text(Objects.requireNonNull(Main.getPluginConfig().getString("Translate.RadarEnabled")), NamedTextColor.GREEN);
+        final TextComponent textRadarDisabled = Component.text(Objects.requireNonNull(Main.getPluginConfig().getString("Translate.RadarDisabled")), NamedTextColor.RED);
 
         if (!(sender instanceof Player player)) {
             sender.sendMessage(textNotPlayer);
@@ -41,8 +45,17 @@ public class SlimeChunkCommand implements CommandExecutor, TabCompleter {
             return true;
         }
 
-        if (args.length == 0) {
-
+        if (args.length == 2 && args[0].equalsIgnoreCase("radar")) {
+            if (args[1].equalsIgnoreCase("on")) {
+                plugin.setRadarEnable(player.getUniqueId(), true);
+                player.sendMessage(textRadarEnabled);
+            }
+            else if (args[1].equalsIgnoreCase("off")) {
+                plugin.setRadarEnable(player.getUniqueId(), false);
+                player.sendMessage(textRadarDisabled);
+            }
+            return true;
+        }  else if (args.length == 0) {
             if (!player.getWorld().getEnvironment().toString().equals("NORMAL")) {
                 player.sendMessage(textExecuteOnOverworld);
                 return true;
@@ -54,12 +67,10 @@ public class SlimeChunkCommand implements CommandExecutor, TabCompleter {
                 player.sendMessage(textNotSlimeChunk);
             }
 
-        } else if (!args[0].equals("radar")) {
-            player.sendMessage(textWrongArguments);
-
-        } else if (!args[1].equals("on") || !args[2].equals("off"))  {
+        } else {
             player.sendMessage(textWrongArguments);
         }
+
         return true;
     }
 
